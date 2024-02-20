@@ -1,0 +1,24 @@
+[package]
+name = "common_enums"
+description = "Enums shared across the request/response types and database types"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+license.workspace = true
+
+[features]
+dummy_connector = []
+
+[dependencies]
+diesel = { version = "2.1.0", features = ["postgres"] }
+serde = { version = "1.0.193", features = ["derive"] }
+serde_json = "1.0.108"
+strum = { version = "0.25", features = ["derive"] }
+utoipa = { version = "3.3.0", features = ["preserve_order"] }
+
+# First party crates
+router_derive = { version = "0.1.0", path = "../router_derive" }
+
+[dev-dependencies]
+serde_json = "1.0.108"
