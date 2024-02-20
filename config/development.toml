@@ -492,7 +492,7 @@ apple_pay_merchant_cert = "APPLE_PAY_MERCHNAT_CERTIFICATE"
 apple_pay_merchant_cert_key = "APPLE_PAY_MERCHNAT_CERTIFICATE_KEY"
 
 [payment_link]
-sdk_url = "http://localhost:9050/dist/HyperLoader.js"
+sdk_url = "http://localhost:9050/HyperLoader.js"
 
 [payment_method_auth]
 redis_expiry = 900
@@ -531,7 +531,7 @@ database_name = "default"
 [analytics.sqlx]
 username = "db_user"
 password = "db_pass"
-host = "localhost"
+host = "pg"
 port = 5432
 dbname = "hyperswitch_db"
 pool_size = 5
