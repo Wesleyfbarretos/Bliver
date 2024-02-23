@@ -83,7 +83,7 @@ max_feed_count = 200
 
 [cors]
 max_age = 30
-origins = "http://localhost:8080,http://localhost:9000"
+origins = "http://localhost:8080,http://localhost:9000,http://localhost:9060,http://localhost:9050"
 allowed_methods = "GET,POST,PUT,DELETE"
 wildcard_origin = false
 
@@ -93,6 +93,9 @@ max_age = 365
 
 [api_keys]
 hash_key = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+
+[payment_link]
+sdk_url = "http://localhost:9050/HyperLoader.js"
 
 [connectors]
 aci.base_url = "https://eu-test.oppwa.com/"
@@ -379,7 +382,7 @@ redis_lock_expiry_seconds = 180 # 3 * 60 seconds
 delay_between_retries_in_milliseconds = 500
 
 [events.kafka]
-brokers = ["localhost:9092"]
+brokers = ["kafka0:29092"]
 intent_analytics_topic = "hyperswitch-payment-intent-events"
 attempt_analytics_topic = "hyperswitch-payment-attempt-events"
 refund_analytics_topic = "hyperswitch-refund-events"
@@ -394,13 +397,13 @@ source = "sqlx"
 [analytics.clickhouse]
 username = "default"
 # password = ""
-host = "http://localhost:8123"
+host = "http://clickhouse-server:8123/"
 database_name = "default"
 
 [analytics.sqlx]
 username = "db_user"
 password = "db_pass"
-host = "localhost"
+host = "pg"
 port = 5432
 dbname = "hyperswitch_db"
 pool_size = 5
