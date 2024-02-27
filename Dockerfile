@@ -32,7 +32,7 @@ ENV RUST_BACKTRACE="short"
 ENV CARGO_REGISTRIES_CRATES_IO_PROTOCOL="sparse"
 
 COPY . .
-RUN cargo build --release --features release ${EXTRA_FEATURES}
+RUN cargo build --release --features release
 
 
 

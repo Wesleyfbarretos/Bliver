@@ -46,7 +46,8 @@ services:
 
   ### Application services
   hyperswitch-server:
-    image: juspaydotin/hyperswitch-router:2024.02.21.0-standalone
+    # image: juspaydotin/hyperswitch-router:2024.02.21.0-standalone
+    image: bliver:latest
     command: /local/bin/router -f /local/config/docker_compose.toml
     ports:
       - "8080:8080"
